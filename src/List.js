@@ -8,10 +8,23 @@ function List() {
   const navigate = useNavigate();
   const [data, setData] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:8000/data')
+    const items = JSON.parse(localStorage.getItem('values'));
+    if (items) {
+      fetch('http://localhost:8000/data')
       .then(res => res.json())
       .then(data => setData(data));
+    }
+    else{
+    navigate('/Login')
+    }
   }, []);
+   
+    const logout =(event)=>{
+      event.preventDefault();
+      localStorage.removeItem('values');
+      navigate('/Login');
+    }
+
 
   const handleDelete = (id) => {
     axios.delete('http://localhost:8000/delete/' + id)
@@ -71,7 +84,8 @@ function List() {
             ))}
           </tbody>
         </table>
-      </div>
+      </div><br></br>
+      <button type="button" onClick={logout} >Logout</button>
     </div>
   )
 }

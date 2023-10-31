@@ -59,7 +59,7 @@ const EditUser = () => {
         <label>Enter your Mother Name:</label><br></br>
         <input type="text" name="mothername" value={values.mothername || ""} onChange={(event) => setValues(values => ({ ...values, mothername: event.target.value }))} /><br></br><br></br>
         <label>Enter your Email</label><br></br>
-        <input type="text" name="email" value={values.email || ""} onChange={(event) => setValues(values => ({ ...values, email: event.target.value }))} /><br></br><br></br>
+        <input type="email" name="email" value={values.email || ""} onChange={(event) => setValues(values => ({ ...values, email: event.target.value }))} /><br></br><br></br>
         <label>Enter your Password:</label><br></br>
         <input type="password" name="password" value={values.password || ""} onChange={(event) => setValues(values => ({ ...values, password: event.target.value }))} /><br></br><br></br>
         <label>Enter your age:</label><br></br>

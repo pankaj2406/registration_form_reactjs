@@ -5,7 +5,7 @@ function Home() {
   return (
     <div >
       <h1 style={{ textAlign: "center" }}>Hello Everyone!</h1>
-      <ul><li>First go to Myform page and fill requirements.</li>
+      <ul><li>First go to Registeration and fill requirements.</li>
 
       </ul>
     </div>
